@@ -1,0 +1,29 @@
+# Gradle / Android build output
+.gradle/
+build/
+app/build/
+.kotlin/
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# Local/private signing material
+keystore.properties
+keystore/
+*.jks
+*.keystore
+*.p12
+
+# Local reference materials and internal process docs
+download.devtools
+web_ui.jpg
+example.xlsx
+.superpowers/
+docs/superpowers/
+
+# Local release artifacts
+dist/
+*.apk
+*.aab
+.android-sdk/

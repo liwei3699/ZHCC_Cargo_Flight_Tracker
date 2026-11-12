@@ -1,0 +1,11 @@
+* text=auto
+gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.jks binary
+*.keystore binary
+*.p12 binary
+*.apk binary
+*.png binary
+*.jpg binary
+*.jpeg binary
