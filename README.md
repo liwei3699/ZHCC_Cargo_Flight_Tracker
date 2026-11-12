@@ -17,7 +17,7 @@ Android 13+ 客户端，读取 [郑州机场货运站](https://www.zzcargo.com/a
 
 ### 正式版（推荐）
 
-从本仓库的 GitHub Releases 页面下载 `郑州货运航班动态-<version>-release.apk`；本地已构建版本位于
+从本仓库的 GitHub Releases 页面下载 `zzcargo-flight-board-<version>-release.apk`；本地已构建版本位于
 `dist/郑州货运航班动态-1.1.0-release.apk`（该目录不提交到 git）。
 
 - 手机需为 Android 13 及以上。
@@ -108,7 +108,7 @@ git tag v1.1.0
 git push origin v1.1.0
 ```
 
-工作流会生成 `郑州货运航班动态-v1.1.0-release.apk` 并附加到 Release。密钥或 Secrets
+工作流会生成 `zzcargo-flight-board-v1.1.0-release.apk` 并附加到 Release。密钥或 Secrets
 缺失时工作流会失败，这是预期行为。
 
 ## 签名密钥备份
