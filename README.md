@@ -13,6 +13,10 @@ Android 13+ 客户端，读取 [郑州机场货运站](https://www.zzcargo.com/a
 - 卡片列表与完整详情；本地 JSON 缓存，断网可看上次数据
 - 导出当前筛选结果为 19 列 xlsx 到下载目录，支持打开 / 分享
 
+## Windows 桌面版
+
+Windows 版（.NET 10 / WPF）仓库：https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker_for_Windows
+
 ## 下载与安装
 
 ### 正式版（推荐）
