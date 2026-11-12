@@ -17,8 +17,12 @@ Android 13+ 客户端，读取 [郑州机场货运站](https://www.zzcargo.com/a
 
 ### 正式版（推荐）
 
-从本仓库的 GitHub Releases 页面下载 `zzcargo-flight-board-<version>-release.apk`；本地已构建版本位于
-`dist/郑州货运航班动态-1.1.0-release.apk`（该目录不提交到 git）。
+- [下载 v1.1.0 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.0/zzcargo-flight-board-v1.1.0-release.apk)
+- [查看 v1.1.0 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.0)
+- 文件名：`zzcargo-flight-board-v1.1.0-release.apk`
+- SHA-256：`8367EFB2364ECF72879C2D3E235B9DF46E09921622E507E15808543D6A31B7A4`
+
+本地已构建版本位于 `dist/郑州货运航班动态-1.1.0-release.apk`（该目录不提交到 git）。
 
 - 手机需为 Android 13 及以上。
 - 正式版与开发调试版签名不同，若手机已安装 debug 版，请先卸载再安装正式版。
