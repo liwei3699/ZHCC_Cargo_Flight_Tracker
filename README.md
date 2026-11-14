@@ -6,6 +6,8 @@ Android 12+（API 31+）客户端，读取 [郑州机场货运站](https://www.z
 
 - 全量抓取当前航班动态（约 600+ 条）
 - 航班号 / 航班日期 / 进出港 / 代理 / 航司 / 机型 / 始发站 / 目的站筛选
+- 航司筛选显示代码 + 中文名，官网目录失败时使用内置名称兜底
+- 机型筛选支持大类 + 小类，例如“波音737”下可选择 733 / 738 / 739 等
 - 全局关键词搜索、到达 / 起飞 / 延误快捷筛选
 - 按起降机场、计划/实际起降时间、航班日期、机型、航班号排序，支持升序/降序
 - 航司名称来自官网航司目录，常见货运代码有内置中文名兜底
@@ -21,12 +23,11 @@ Windows 版（.NET 10 / WPF）仓库：https://github.com/liwei3699/ZHCC_Cargo_F
 
 ### 正式版（推荐）
 
-- [下载 v1.1.1 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.1/zzcargo-flight-board-v1.1.1-release.apk)
-- [查看 v1.1.1 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.1)
-- 文件名：`zzcargo-flight-board-v1.1.1-release.apk`
-- SHA-256（GitHub Release 附件）：`71FBB696D17B25EEC682AA6AA576CEA7FBD8453913CE657CA946084453C5AD3B`
+- [下载 v1.1.2 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.2/zzcargo-flight-board-v1.1.2-release.apk)
+- [查看 v1.1.2 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.2)
+- 文件名：`zzcargo-flight-board-v1.1.2-release.apk`
 
-本地已构建版本位于 `dist/zzcargo-flight-board-1.1.1-release.apk`（该目录不提交到 git）。
+本地已构建版本位于 `dist/zzcargo-flight-board-1.1.2-release.apk`（该目录不提交到 git）。
 
 - 手机/设备需为 Android 12 及以上（API 31+）。
 - 正式版与开发调试版签名不同，若手机已安装 debug 版，请先卸载再安装正式版。
@@ -86,7 +87,7 @@ Release 已启用 R8 混淆、资源压缩和 release 签名。**不要提交** 
 .\gradlew.bat :app:testDebugUnitTest
 ```
 
-当前共 59 项单元测试，覆盖解析、筛选、排序、缓存、xlsx、ViewModel 和航司目录。
+当前共 64 项单元测试，覆盖解析、筛选、排序、缓存、xlsx、ViewModel、航司目录和机型家族。
 
 ## GitHub Actions 发布
 
@@ -112,11 +113,11 @@ Release 已启用 R8 混淆、资源压缩和 release 签名。**不要提交** 
 然后：
 
 ```powershell
-git tag v1.1.1
-git push origin v1.1.1
+git tag v1.1.2
+git push origin v1.1.2
 ```
 
-工作流会生成 `zzcargo-flight-board-v1.1.1-release.apk` 并附加到 Release。密钥或 Secrets
+工作流会生成 `zzcargo-flight-board-v1.1.2-release.apk` 并附加到 Release。密钥或 Secrets
 缺失时工作流会失败，这是预期行为。
 
 ## 签名密钥备份

@@ -10,6 +10,7 @@ data class FilterState(
     val ioAttr: String? = null,
     val agency: String? = null,
     val airline: String? = null,
+    val craftFamily: String? = null,
     val craftType: String? = null,
     val startStationQuery: String = "",
     val terminalStationQuery: String = "",
@@ -18,7 +19,7 @@ data class FilterState(
 ) {
     val hasSheetFilters: Boolean
         get() = flightNoQuery.isNotBlank() || execDate != null || ioAttr != null ||
-            agency != null || airline != null || craftType != null ||
+            agency != null || airline != null || craftFamily != null || craftType != null ||
             startStationQuery.isNotBlank() || terminalStationQuery.isNotBlank()
 
     val sheetFilterCount: Int
@@ -28,6 +29,7 @@ data class FilterState(
             ioAttr != null,
             agency != null,
             airline != null,
+            craftFamily != null,
             craftType != null,
             startStationQuery.isNotBlank(),
             terminalStationQuery.isNotBlank()
@@ -49,6 +51,7 @@ object FlightFilter {
                 (filters.ioAttr == null || flight.ioAttr == filters.ioAttr) &&
                 (filters.agency == null || flight.agency == filters.agency) &&
                 (filters.airline == null || flight.airlinesIataCd == filters.airline) &&
+                (filters.craftFamily == null || CraftTypes.familyOf(flight.craftType) == filters.craftFamily) &&
                 (filters.craftType == null || flight.craftType == filters.craftType) &&
                 (start.isEmpty() || flight.startStationCn.contains(start, ignoreCase = true)) &&
                 (terminal.isEmpty() || flight.terminalStationCn.contains(terminal, ignoreCase = true)) &&

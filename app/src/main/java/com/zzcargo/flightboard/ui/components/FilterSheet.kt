@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import com.zzcargo.flightboard.data.model.Airline
 import com.zzcargo.flightboard.data.model.Flight
 import com.zzcargo.flightboard.domain.AirlineLabels
+import com.zzcargo.flightboard.domain.CraftTypes
 import com.zzcargo.flightboard.domain.FilterState
 import com.zzcargo.flightboard.domain.FlightFilter
 import java.text.Collator
@@ -61,6 +62,16 @@ fun FilterSheet(
         allFlights.map { it.craftType }.filter { it.isNotBlank() }.distinct()
             .sortedWith(Comparator { a, b -> collator.compare(a, b) })
     }
+    val craftFamilies = remember(craftTypes) {
+        craftTypes.map(CraftTypes::familyOf).distinct()
+            .sortedWith(Comparator { a, b -> collator.compare(a, b) })
+    }
+    val craftTypesByFamily = remember(craftTypes) {
+        craftTypes.groupBy(CraftTypes::familyOf)
+    }
+    val craftSubtypeLabels = remember(craftTypes) {
+        craftTypes.associateWith(CraftTypes::shortLabel)
+    }
     val airlineCodes = remember(allFlights) {
         allFlights.map { it.airlinesIataCd }.filter { it.isNotBlank() }.distinct()
             .sortedWith(Comparator { a, b -> collator.compare(a, b) })
@@ -81,6 +92,7 @@ fun FilterSheet(
                 ioAttr = initial.ioAttr,
                 agency = initial.agency,
                 airline = initial.airline,
+                craftFamily = initial.craftFamily,
                 craftType = initial.craftType,
                 startStationQuery = initial.startStationQuery,
                 terminalStationQuery = initial.terminalStationQuery,
@@ -88,6 +100,11 @@ fun FilterSheet(
                 keyword = initial.keyword
             )
         )
+    }
+    val subtypeOptions = if (draft.craftFamily == null) {
+        craftTypes
+    } else {
+        craftTypesByFamily[draft.craftFamily].orEmpty()
     }
     val matchCount = remember(draft, allFlights) {
         FlightFilter.apply(allFlights, draft).size
@@ -139,10 +156,29 @@ fun FilterSheet(
                 onSelect = { draft = draft.copy(airline = it) }
             )
             DropdownField(
-                label = "机型",
+                label = "机型大类",
+                selectedValue = draft.craftFamily,
+                options = craftFamilies,
+                onSelect = { family ->
+                    val keepType = family != null &&
+                        draft.craftType?.let { CraftTypes.familyOf(it) == family } == true
+                    draft = draft.copy(
+                        craftFamily = family,
+                        craftType = if (keepType) draft.craftType else null
+                    )
+                }
+            )
+            DropdownField(
+                label = "机型小类",
                 selectedValue = draft.craftType,
-                options = craftTypes,
-                onSelect = { draft = draft.copy(craftType = it) }
+                options = subtypeOptions,
+                labels = craftSubtypeLabels,
+                onSelect = { type ->
+                    draft = draft.copy(
+                        craftType = type,
+                        craftFamily = type?.let(CraftTypes::familyOf) ?: draft.craftFamily
+                    )
+                }
             )
             OutlinedTextField(
                 value = draft.startStationQuery,

@@ -143,4 +143,32 @@ class FlightFilterTest {
         )
         assertEquals(2, state.sheetFilterCount)
     }
+
+    @Test
+    fun `filters by aircraft family and subtype`() {
+        assertEquals(
+            listOf(1L, 3L),
+            FlightFilter.apply(flights, FilterState(craftFamily = "波音737")).map { it.id }
+        )
+        assertEquals(
+            listOf(2L),
+            FlightFilter.apply(flights, FilterState(craftFamily = "波音747")).map { it.id }
+        )
+        assertEquals(
+            listOf(2L),
+            FlightFilter.apply(flights, FilterState(craftType = "B744")).map { it.id }
+        )
+        assertEquals(
+            emptyList<Long>(),
+            FlightFilter.apply(
+                flights,
+                FilterState(craftFamily = "波音737", craftType = "B744")
+            ).map { it.id }
+        )
+    }
+
+    @Test
+    fun `sheet filter count includes aircraft family`() {
+        assertEquals(1, FilterState(craftFamily = "波音737").sheetFilterCount)
+    }
 }
