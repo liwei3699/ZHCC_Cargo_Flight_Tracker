@@ -1,6 +1,6 @@
 # 郑州货运航班动态（非官方）
 
-Android 13+ 客户端，读取 [郑州机场货运站](https://www.zzcargo.com/airline/1) 的公开「航班动态」数据。
+Android 12+（API 31+）客户端，读取 [郑州机场货运站](https://www.zzcargo.com/airline/1) 的公开「航班动态」数据。
 
 ## 功能
 
@@ -21,14 +21,13 @@ Windows 版（.NET 10 / WPF）仓库：https://github.com/liwei3699/ZHCC_Cargo_F
 
 ### 正式版（推荐）
 
-- [下载 v1.1.0 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.0/zzcargo-flight-board-v1.1.0-release.apk)
-- [查看 v1.1.0 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.0)
-- 文件名：`zzcargo-flight-board-v1.1.0-release.apk`
-- SHA-256：`8367EFB2364ECF72879C2D3E235B9DF46E09921622E507E15808543D6A31B7A4`
+- [下载 v1.1.1 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.1/zzcargo-flight-board-v1.1.1-release.apk)
+- [查看 v1.1.1 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.1)
+- 文件名：`zzcargo-flight-board-v1.1.1-release.apk`
 
-本地已构建版本位于 `dist/郑州货运航班动态-1.1.0-release.apk`（该目录不提交到 git）。
+本地已构建版本位于 `dist/zzcargo-flight-board-1.1.1-release.apk`（该目录不提交到 git）。
 
-- 手机需为 Android 13 及以上。
+- 手机/设备需为 Android 12 及以上（API 31+）。
 - 正式版与开发调试版签名不同，若手机已安装 debug 版，请先卸载再安装正式版。
 - 首次启动会抓取全部分页，保持联网即可。
 
@@ -112,11 +111,11 @@ Release 已启用 R8 混淆、资源压缩和 release 签名。**不要提交** 
 然后：
 
 ```powershell
-git tag v1.1.0
-git push origin v1.1.0
+git tag v1.1.1
+git push origin v1.1.1
 ```
 
-工作流会生成 `zzcargo-flight-board-v1.1.0-release.apk` 并附加到 Release。密钥或 Secrets
+工作流会生成 `zzcargo-flight-board-v1.1.1-release.apk` 并附加到 Release。密钥或 Secrets
 缺失时工作流会失败，这是预期行为。
 
 ## 签名密钥备份
