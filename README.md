@@ -26,7 +26,7 @@ Windows 版（.NET 10 / WPF）仓库：https://github.com/liwei3699/ZHCC_Cargo_F
 - [下载 v1.1.3 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.3/zzcargo-flight-board-v1.1.3-release.apk)
 - [查看 v1.1.3 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.3)
 - 文件名：`zzcargo-flight-board-v1.1.3-release.apk`
-- SHA-256（GitHub Release 附件）：发布后更新
+- SHA-256（GitHub Release 附件）：`3910384E201A60FBFB296AE9697B1B5BE4832F9A4E8A6D47B63FEE8188BE7275`
 
 本地已构建版本位于 `dist/zzcargo-flight-board-1.1.3-release.apk`（该目录不提交到 git）。
 
