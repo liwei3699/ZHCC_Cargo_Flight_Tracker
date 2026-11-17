@@ -21,6 +21,8 @@ object CraftTypes {
         Family("巴航工业E系列", listOf("E17", "E19")),
         Family("庞巴迪CRJ", listOf("CRJ")),
         Family("中国商飞ARJ21", listOf("ARJ")),
+        Family("中国商飞C919", listOf("C919")),
+        Family("湾流公务机", listOf("GLF")),
         Family("伊尔系列", listOf("IL")),
         Family("图系列", listOf("TU"))
     )

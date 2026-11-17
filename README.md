@@ -23,12 +23,12 @@ Windows 版（.NET 10 / WPF）仓库：https://github.com/liwei3699/ZHCC_Cargo_F
 
 ### 正式版（推荐）
 
-- [下载 v1.1.2 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.2/zzcargo-flight-board-v1.1.2-release.apk)
-- [查看 v1.1.2 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.2)
-- 文件名：`zzcargo-flight-board-v1.1.2-release.apk`
-- SHA-256（GitHub Release 附件）：`378894EDCA604A7FFC21E9F3B24FFCA88705EB08D126ACC2BE7289CC3F825815`
+- [下载 v1.1.3 Release APK](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/download/v1.1.3/zzcargo-flight-board-v1.1.3-release.apk)
+- [查看 v1.1.3 Release 页面](https://github.com/liwei3699/ZHCC_Cargo_Flight_Tracker/releases/tag/v1.1.3)
+- 文件名：`zzcargo-flight-board-v1.1.3-release.apk`
+- SHA-256（GitHub Release 附件）：发布后更新
 
-本地已构建版本位于 `dist/zzcargo-flight-board-1.1.2-release.apk`（该目录不提交到 git）。
+本地已构建版本位于 `dist/zzcargo-flight-board-1.1.3-release.apk`（该目录不提交到 git）。
 
 - 手机/设备需为 Android 12 及以上（API 31+）。
 - 正式版与开发调试版签名不同，若手机已安装 debug 版，请先卸载再安装正式版。
@@ -114,11 +114,11 @@ Release 已启用 R8 混淆、资源压缩和 release 签名。**不要提交** 
 然后：
 
 ```powershell
-git tag v1.1.2
-git push origin v1.1.2
+git tag v1.1.3
+git push origin v1.1.3
 ```
 
-工作流会生成 `zzcargo-flight-board-v1.1.2-release.apk` 并附加到 Release。密钥或 Secrets
+工作流会生成 `zzcargo-flight-board-v1.1.3-release.apk` 并附加到 Release。密钥或 Secrets
 缺失时工作流会失败，这是预期行为。
 
 ## 签名密钥备份

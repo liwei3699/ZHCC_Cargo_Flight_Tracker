@@ -14,9 +14,11 @@ class CraftTypesTest {
         assertEquals("空客A320系列", CraftTypes.familyOf("A320NEO"))
         assertEquals("空客A350", CraftTypes.familyOf("A359"))
         assertEquals("中国商飞ARJ21", CraftTypes.familyOf("ARJ217"))
+        assertEquals("中国商飞C919", CraftTypes.familyOf("C919"))
+        assertEquals("湾流公务机", CraftTypes.familyOf("GLF5"))
         assertEquals("巴航工业E系列", CraftTypes.familyOf("E190"))
         assertEquals("伊尔系列", CraftTypes.familyOf("IL76"))
-        assertEquals(CraftTypes.OTHER_FAMILY, CraftTypes.familyOf("C919"))
+        assertEquals(CraftTypes.OTHER_FAMILY, CraftTypes.familyOf("ZZZZ"))
     }
 
     @Test
